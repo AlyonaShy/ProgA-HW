@@ -1,0 +1,130 @@
+body {
+    font-family: 'Sofia Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+.header {
+    height: 237px;
+    background-color: RGBA(45, 112, 83, 1);
+    display: flex;
+}
+.header__logo {
+    background-color: #fff;
+    width: 144px;
+    height: 144px;
+    margin: 46px 35px;
+    border-radius: 50%;
+}
+.header__name {
+    font-size: 30px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    color: #FFFFFF;
+    max-width: 150px;
+    padding: 53px 57px;
+}
+.header__menu {
+    margin-right: 10px;
+    flex-grow: 2;
+    padding-top: 60px;
+}
+.header__menu_point {
+    background-color: #fff;
+    width: 87px;
+    height: 15px;
+    border-radius: 30px;
+    margin: 13px 13px auto auto;
+}
+.firstscreen {
+    height: 470px;
+    background-image: url(./img/0325115cfca2f08bd19529e1d4a4396a@1X.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.button {
+    width: 344px;
+    height: 77px;
+    background: rgba(203, 146, 35, 1);
+    border: 0px;
+    margin-bottom: 50px;
+}
+a {
+    
+    padding: 30px 45px;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.infoblock {
+    font-size: 24px;
+}
+.infoblock__person {
+    display: flex;
+    align-items: center;
+}
+.infoblock__person_foto {
+    border-radius: 50%;
+    width: 255px;
+    height: 250px;
+    margin: 80px 80px 35px 35px;
+
+}
+.infoblock__person_name {
+}
+.h1 {
+    margin-top: 46px;
+    margin-bottom: 46px;
+    font-size: 36px;
+}
+.infoblock__text {
+    margin-left: 35px;
+    margin-right: 35px;
+}
+.infoblock__list {
+    margin-left: 35px;
+    list-style-type: none;
+}
+.forb {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+}
+.footer {
+    height: 156px;
+    background-color: RGBA(136, 136, 136, 1);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.footer__logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 35px 35px;
+    background-color: #fff;
+}
+.footer__address {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 35px;
+    gap: 25px;
+    color: #fff;
+}
+.footer__address_address {
+
+}
+.footer__info {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+.footer__info_tel {
+}
+.footer__info_mail {
+}
