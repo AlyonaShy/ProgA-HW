@@ -51,15 +51,6 @@ a {
 }
 /* загальні стилі */
 
-@font-face {
-    font-family: minionpro-regular;
-    src: url(./font/MinionProRegular/Minion_Pro_Regular.ttf);
-}
-
-@font-face {
-    font-family: minionpro-bold;
-    src: url(./font/MinionPro-Bold.otf);
-}
 
 body {
     font-family: monospace;
