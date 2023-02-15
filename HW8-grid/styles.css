@@ -1,0 +1,330 @@
+/* обнулення стилів */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html {
+    height: 100%;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/**/
+html {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+
+
+/**/
+
+.heder {
+    background: url(./img/Layer.png);
+    width: 100%;
+    height: 750px;
+    background-size: cover;
+}
+.heder__logo-zone {
+    display: grid;
+    grid-template-columns: 1fr minmax(150px, 650px) 750px 1fr;
+    grid-template-rows: 90px;
+    align-items: end;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.heder__logo {
+    grid-column: 2/3;
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.heder__logo span {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 41px;
+}
+.heder__menu {
+    grid-column: 3/4;
+    padding-right: 10px;
+}
+.menu {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.menu__button button {
+    width: 190px;
+    height: 63px;
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
+    text-transform: inherit;
+    font-family: inherit;
+    font-size: 20px;
+    position: relative;
+}
+.menu__button button::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url(./img/search.png);
+    background-repeat: no-repeat;
+    left: -22px;
+
+}
+.menu__button button::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #4CB1CA;
+    position: absolute;
+    right: 2px;
+    bottom: 25px;
+    transform: rotate(45deg);
+}
+
+.heder__main-zone {
+    margin-top: 38px;
+    display: grid;
+    grid-template-columns: 1fr 273px 1fr;
+    grid-template-rows: 25px 100px 25px 125px;
+    align-items: end;
+}
+.heder__p1 {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    font-size: 18px;
+    color: #D596BA;
+}
+.heder__main-zone h1 {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    font-size: 32px;
+    color: #fff;
+}
+.heder__p2 {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    font-size: 16px;
+    color: #97155B;
+}
+.heder__main-zone a {
+    grid-row: 4/5;
+    grid-column: 2/3;
+
+}
+.heder__main-zone button {
+    width: 273px;
+    height: 71px;
+    background-color: #D60C1A;
+    border: none;
+    color: #fff;
+    font-family: inherit;
+    font-size: 25px;
+    position: relative;
+}
+.heder__main-zone button::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    right: 22px;
+    bottom: 30px;
+    transform: rotate(45deg);
+}
+
+
+/**/
+
+.main {
+    width: 100%;
+    height: 650px;
+    background: #A99494;
+}
+.main__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    grid-template-rows: 525px;
+    gap: 2%;
+    margin: 0px 10px;
+}
+
+.article {
+    background: #fff;
+    display: grid;
+    grid-template-rows: 250px 30px 30px 30px;
+    grid-template-columns: 1fr;
+    position: relative;
+    bottom: 2vw;
+    gap: 10px;
+}
+.article img {
+    width: 90%;
+    justify-self: center;
+    position: relative;
+    bottom: 2vw;
+    border: 1px solid #fff;
+}
+.article h2, .article div, .article p {
+    justify-self: start;
+    margin-left: 35px;
+    margin-right: 35px;
+
+}
+.article h2 {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+.article div {
+    width: 126px;
+    height: 13px;
+    background: #D60C18;
+}
+.article p {
+    letter-spacing: 1px;
+}
+
+/**/
+.footer {
+    background: #000;
+    width: 100%;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 1400px) 1fr;
+    grid-template-rows: 571px;
+}
+.footer__container {
+    background-color: #fff;
+    grid-column: 2/3;
+    margin: 10px;
+    position: relative;
+    bottom: 1vw;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: 150px 1fr;
+}
+.footer__container a {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    margin-left: 25px;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+}
+.footer__container a::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    height: 17px;
+    background: url(./img/logo1.png);
+    left: -15px;
+}
+
+@media screen and (min-width: 1450px){
+    .main__grid {
+        display: grid;
+        grid-template-columns: 1fr 410px 410px 410px 1fr;
+        grid-template-rows: 525px;
+        gap: 46px
+    }
+    .main__grid article:nth-child(1){
+        grid-column: 2/3;
+    }
+    .main__grid article:nth-child(2){
+        grid-column: 3/4;
+        
+    }
+    .main__grid article:nth-child(3){
+        grid-column: 4/5;
+        
+    }
+    
+}
+
+@media screen and (max-width: 950px) {
+   
+    .main {
+        width: 100%;
+        height: auto;
+        background: #A99494;
+    }
+    .main__grid {
+        display: grid;
+        grid-template-columns: 1fr 350px 1fr;
+        grid-template-rows: repeat(3, 525px);
+        gap: 35px;
+    }
+    .main__grid article:nth-child(1) {
+        grid-column: 2/3;
+    }
+    .main__grid article:nth-child(2) {
+        grid-column: 2/3;
+        
+    }
+    .main__grid article:nth-child(3) {
+        grid-column: 2/3;
+        
+    }
+    .menu {
+        display: none;
+    }
+    .burger {
+        width: 0;
+	    height: 0;
+	    border-bottom: 65px solid #fff; 
+	    border-right: 65px solid transparent;	
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+}
