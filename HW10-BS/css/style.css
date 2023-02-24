@@ -76,3 +76,8 @@ footer li {
 .img-footer {
     width: 50px;
 }
+.col-1 {
+    max-width: 60px;
+    max-width: 50px;
+    margin-right: 15px;
+}
