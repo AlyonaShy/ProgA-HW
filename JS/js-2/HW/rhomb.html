@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        <script>
+            document.write("<br>");
+
+            let y = 20, x = y * 2 - 1, a = "*", b = " ", q = (x + 1)/2, w = y, e = y, r = 0, n = 2, m = x - 1;
+
+            for(i = 0; i < x ; i++) {
+                if(i == r & i < q) {
+                    for(j = 1; j <= x; j++){
+                        if(j == w || j == e) {
+                            document.write(a);
+                        } else {
+                            document.write(b);
+                        }
+                    }
+                    document.write("<br>");
+                    w++;
+                    e--;
+                    
+                } else {
+                    for(j = 1; j <= x; j++){
+                        if(j == n || j == m) {
+                            document.write(a);
+                        } else {
+                            document.write(b);
+                        }
+                    }
+                    document.write("<br>");
+                    n++;
+                    m--;
+
+                }
+                r++;
+            }
+           
+
+        </script>
+    </pre>
+</body>
+</html>

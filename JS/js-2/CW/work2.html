@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let login = "логин",
+       pass = "пароль",
+       yourLog = prompt("Ваш логин", "логин"),
+       yourPass;
+
+       if(yourLog == login) {
+        yourPass = prompt("Ваш пароль", "пароль");
+        if(yourPass == pass){
+            alert("Данные верны, Вы вошли как админ");
+        } else if(yourPass == null) {
+            alert("отмена входа");
+        } else {
+            alert("пароль не верный");
+        }
+       } else if(yourLog == null){
+        alert("отмена входа");
+       } else {
+        alert("вы не админ, доступ запрещен");
+       }
+       
+
+    </script>
+</body>
+</html>

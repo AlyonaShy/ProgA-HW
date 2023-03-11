@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+    <script>
+        document.write("<br>");
+      
+/* прямокутній трикутник  
+      
+        let a = 15, b = 15, x = "*", y = " ";
+
+            for(i = 0; i < b; i++){
+                if (i == 0 || i == b-1){
+                    for(j = 0; j < a; j++){
+                        document.write(x);                       
+                    }
+                } else {
+                    for(j = 0; j < a; j++){
+                        if(j == 0 || j == a-1){
+                            document.write(x);
+                            } else {
+                            document.write(y);
+                        }
+                    }                
+                }
+                document.write("<br>");
+                    a--;
+            }
+  */
+ 
+ //рівносторонній трикутник
+        let a = 20, b = a * 2 - 1, q = "*", w = " ", k = (b+1)/2, x = k, y = k;
+        for(i = 0; i < a; i++){
+            if(i == 0){
+                for(j = 1; j <= b; j++){
+                    if(j == k){
+                        document.write(q);
+                    } else {
+                        document.write(w);
+                    }
+                
+                }
+                document.write("<br>");
+                x++;
+                y--;
+            } else if(i == a - 1) {
+                for(j = 0; j < b; j++){
+                document.write(q);
+                }
+            } else {
+                for(j = 1; j <= b; j++){
+                    if(j == x || j == y){
+                        document.write(q);
+                    } else {
+                        document.write(w);
+                    }
+                
+                }
+                document.write("<br>");
+                x++;
+                y--;
+            }
+        }
+       
+
+    </script>
+    </pre>
+</body>
+</html>
