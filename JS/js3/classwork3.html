@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let a =["Аня", "Богдан", "Вася", "Григорій", "Денис", "Едуард", "Євген", "Жанна", "Зоя", "Ірина", "Катерина", "Людмила", "Марина", "Наталя", "Оксана"];
+
+        let e = a.join(" &#9729 ");    // додаємо хмарки
+        document.write(e + "<br>");   // виводим перевернутий масив із хмарками 
+
+        
+        let c = + prompt("оберіть елемент для видвлення від 0 до 14", 0);
+
+        a.splice(c, 1);
+        document.write("Масив з урахуванням видаленного елемента: " + a + "<br>");
+
+        e = a.join(" &#9729 ");    // додаємо хмарки
+        document.write(e + "<br>");   // виводим перевернутий масив із хмарками з урахуванням видаленного елемента
+
+
+    </script>
+</body>
+</html>

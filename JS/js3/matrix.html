@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let matrix = [
+            [1, 2, 3, 4, 5, 6],
+            [7, 8, 9, 10, 11, 12],
+            [13, 14, 15, 16, 17, 18],
+            [19, 20, 21, 22, 23, 24],
+            [25, 26, 27, 28, 29, 30],
+            [31, 32, 33, 34, 35, 36]
+        ]
+        document.write(matrix.join("<br>"));
+
+        document.write("<hr>" + "поворот на 90*" + "<br>");
+
+    
+        let revMatrix = [[], [], [], [], [], []];
+        
+
+        for(j = 0; j < matrix.length; j++){
+            for(i = 0; i < matrix.length; i++){
+                revMatrix[i][j] = matrix[j][matrix.length - 1 - i];
+                console.log(revMatrix);
+            }
+        }    
+        document.write(revMatrix.join("<br>")); 
+    
+        document.write("<hr>" + "поворот на 180*" + "<br>");
+
+        for(i = 0; i< matrix.length; i++){
+            matrix[i].reverse();
+        }
+
+        matrix.reverse();
+        document.write(matrix.join("<br>"));
+
+        
+
+    </script>
+</body>
+</html>

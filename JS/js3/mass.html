@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let styles = ["Джаз", "Блюз"];
+        document.write("Початковий масив - " + styles + "<br>");
+        styles.push("Рок-н-ролл", "Попса");
+        document.write("Масив після додавання елементів в кінець списку - " + styles);
+        document.write("<br>");
+
+        if(styles.length % 2 == 0){
+            styles.splice(styles.length / 2 - 1, 2, "Класика", "Рок");
+
+        }else {
+            styles.splice((styles.length - 1) / 2, 1, "Реггі");
+        }
+        document.write("Масив після зміни середнього елемента - " + styles + "<br>");
+
+        document.write("Видаленний елемент - " + styles.shift() + "<br>");
+        document.write("Масив після того як видалили перший елемент - " + styles + "<br>");
+        styles.unshift("Реп", "Ар-н-бі");
+        document.write("Масив після додавання елементів на початок - " + styles + "<br>");
+    </script>
+</body>
+</html>
