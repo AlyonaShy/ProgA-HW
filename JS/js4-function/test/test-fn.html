@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 10;
+        let b = 26;
+        kaka = 3;
+        cuf(b);
+        document.write("<br>");
+        document.write(b);
+        
+        document.write(kaka + "out f-n");
+
+        document.write("<br>");
+        for(j = 0; j <= 10; j++) {
+            first(a, b);
+        document.write("<br>");
+        second(a, b);
+
+        document.write("<br>");
+        
+        third (a, b);
+        }
+
+        function cuf(zaza){
+            kaka--;
+            
+            document.write(zaza);
+            document.write('in function' + kaka);
+
+        }
+        
+
+
+        function first(a, b) {
+            for(i = a; i<=b; i++) {
+                document.write(i + ", ");
+            }
+        }
+        
+        
+        function second(a, b) {
+            for(i = b; i>=a; i--) {
+                document.write(i + ", ");
+            }
+        }
+        
+        document.write("<br>");
+        
+        function third (a, b) {
+            let c = (a+b)/2;
+            first(c, b);
+            //for(i = c; i <= b; i++) {
+              //  document.write(i + ", ");
+           // }
+           document.write("<br>");
+           second(a, c);
+           
+            //for(i = c; i>= a; i--) {
+              //  document.write(i + ", ");
+            //}
+        }
+
+
+
+    </script>
+</body>
+</html>

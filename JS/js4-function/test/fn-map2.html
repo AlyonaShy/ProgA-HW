@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mass = [1, 2, 3, 4, 5, 6, 7];
+        //let mass2 = [8, 9, 10, 11, 12, 13, 14];
+       /* function massand1(anymass) {
+            for(i = 0; i < anymass.length; i++) {
+                anymass[i] += 1;
+            //console.log(mass[i]);
+            document.write(anymass[i] + ", ");
+        }
+        }*/
+        //massand1(mass);
+        //document.write("<hr>");
+
+        let newmass = mass.map(function(a, i, mass2) {
+	        //return a += 1;
+	        //a = a + mass2[i];
+            mass2[i] = a + 5
+            console.log(a);
+            //return a;
+            document.write(a);
+        document.write(mass2 + "<hr>");
+
+
+        });
+        document.write(newmass + "<hr>");
+        //document.write(mass2 + "<hr>");
+
+        document.write(mass);
+
+
+
+    </script>
+</body>
+</html>

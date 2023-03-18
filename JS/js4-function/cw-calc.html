@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a, b;
+
+        function sum(a, b){
+            return(a + b);
+        }
+        function subtraction(a, b){
+            return(a - b);
+        }
+        function multiplication(a, b){
+            return(a * b);
+        }
+        function division(a, b){
+            return(a / b);
+        }
+
+        function calculate(calc, a, b) {
+            return(calc(a, b));
+        }
+        let op1 = prompt("Перше число", 0);
+        a = Number(op1);
+
+        let action = prompt("Введіть дію: + , -, *, /.");
+
+        let op2 = prompt("Друге число", 0);
+        b = Number(op2);
+
+
+        if (isNaN(a) || isNaN(b)){
+            document.write("Введіть тільки числові значення!");
+        } else if(action == "+") {
+            document.write(calculate(sum, a, b));
+        } else if(action == "-") {
+            document.write(calculate(subtraction, a, b));
+        } else if(action == "*") {
+            document.write(calculate(multiplication, a, b));
+        } else if(action == "/") {
+            if(b == 0){
+                document.write("На нуль ми не ділимо =)")
+            } else {
+                document.write(calculate(division, a, b)); 
+            }
+        } else {
+            alert("Ви ввели не дійсну дію");
+        }
+        
+    </script>
+</body>
+</html>
