@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color:aquamarine;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: larger;
+            font-weight: 600;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+       
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+        .menu__items {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+            color: rgb(30, 77, 61);
+            font-size: 20px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+        }
+        header img {
+            max-width: 100px;
+            height: auto;
+        }
+         main {
+            margin: 50px auto;
+            align-content: center;
+        }
+        img {
+            max-width: 40px;
+            height: auto;
+            vertical-align: middle;
+        }
+        main button {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(1, 57, 38);
+            border-radius: 15px;
+            color: #fff;
+            box-shadow: #000 2px 2px;
+        }
+    </style>
+    <header>
+        <img src="img/bitcoin.png" alt="logo">
+        <div class="menu">
+            <ul class="menu__items">
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Новини</a></li>
+                <li><a href="#">Вхід</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <p>Перевірити гаманець:</p>
+        <button type="submit" id="bitcoin-on" onclick="purse.show(purse.coursBitcoin)">Bitcoin</button>
+        <button type="submit" id="ethereum-on" onclick="purse.show(purse.coursEthereum)">Ethereum</button>
+        <button type="submit" id="stellar-on" onclick="purse.show(purse.coursStellar)">Stellar</button>
+        <script>
+            let push, push1;
+            let purse = {
+                name: "John",
+                coursBitcoin: {
+                name: "bitcoin",
+                logo: "<img src='img/bitcoin1.png' alt='logo'>",
+                number: 21,
+                course: 5,
+                },
+                coursEthereum: {
+                name: "ethereum",
+                logo: "<img src='img/ethereum.png' alt='logo'>",
+                number: 15,
+                course: 54,
+                },
+                coursStellar: {
+                name: "stellar",
+                logo: "<img src='img/stellar.png' alt='logo'>",
+                number: 87,
+                course: 2,
+                },
+                show: function(elem) {
+                    document.write("<p> Доброго дня, " + name + "! На Вашому балансі " + 
+                        elem.name + " " + elem.logo + " залишилось " + elem.number + " монет, якщо ви сьогодні продасте їх то отримаєте " + elem.course * elem.number + " грн.");
+                },
+            };
+           /* if (document.querySelector("ethereum-on").onclick){
+                push = purse.coursBitcoin;
+            }else {
+                push = purse.coursStellar;
+            }
+           
+
+            document.querySelector("#ethereum-on").onclick {
+                push = purse.coursBitcoin;}*/
+
+
+           /* document.getElementById("#ethereum-on").onclick = function() {
+                push = purse.coursStellar;  
+            };
+
+            purse.show(purse.coursStellar);*/
+           /* if(push1 = push) {
+                push = purse.coursStellar;
+            }else {
+                push = purse.coursBitcoin;
+
+            }
+            purse.show(push);*/
+            let f1 = function(n) {
+                push = n;
+            }
+           // f1(purse.coursBitcoin);
+            //purse.show(push);
+        </script>
+    </main>
+</body>
+</html>

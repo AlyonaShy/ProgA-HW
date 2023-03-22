@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mass = [1, 2, 3, 4, 5, 6, 7];
+        let newMass = [];
+
+        document.write("Старий масив - " + mass + "<br>");
+
+        myMapFn(myFn, mass);
+
+        document.write("Старий масив після виконання функції - " + mass + "<br>");
+        document.write("Новий масив після виконання функції - " + newMass + "<br>");
+
+        function myFn(a) {
+            if(a % 2 == 0) {
+                return a/2;
+            } else {
+                return a*2;
+            }
+        }
+        function myMapFn(f, m) {
+            for(i = 0; i <m.length; i++) {
+                newMass[i] = f(m[i]);
+            }
+        }
+
+
+    </script>
+</body>
+</html>
