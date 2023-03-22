@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let doc = new Object();
+
+        doc.header = function(objHeader) {
+           this.header = objHeader;
+        };
+        doc.main = function(objMain) {
+           this.main = objMain;
+
+        };
+        doc.btn = function(objBtn) {
+            this.btn = objBtn;
+        };
+        doc.add = new Object();
+        doc.add.header = function(objAddHead) {
+            this.header = objAddHead;
+        };
+        doc.add.main = function(objAddMain) {
+            this.main = objAddMain;
+        };
+        doc.add.footer = function(objAddFooter){
+            this.footer = objAddFooter;
+        };
+
+
+
+        doc.header("<img src='img/header.png' alt='logo'>");
+        doc.main("<img src='img/main.png' alt='logo'>");
+        doc.btn("<img src='img/button.png' alt='logo'>");
+        doc.add.header("<img src='img/video.png' alt='logo'>");
+        doc.add.main("<img src='img/sponsors.png' alt='logo'>");
+        doc.add.footer("<img src='img/choice.png' alt='logo'>");
+
+
+        document.write(doc.header + "<br>");
+        document.write(doc.main + "<br>");
+        document.write(doc.btn + "<br>");
+        document.write(doc.add.header + "<br>");
+        document.write(doc.add.main + "<br>");
+        document.write(doc.add.footer + "<br>");
+
+        document.write("<hr>");
+
+
+        // або
+
+        for(let elem in doc) {
+            document.write(doc[elem] + "<br>");
+        }
+        for(let eleme in doc.add) {
+            document.write(doc.add[eleme] + "<br>");
+        }
+
+
+/* в 2 варіанті читає вкладений об'єкт, як [odject Object].
+Чи можна виключити з циклу об'єтки? */
+
+
+    </script>
+</body>
+</html>
