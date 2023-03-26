@@ -55,16 +55,20 @@
         // або
 
         for(let elem in doc) {
-            document.write(doc[elem] + "<br>");
+            if(isObject(doc[elem])){
+                document.write("");
+            } else {
+                document.write(doc[elem] + "<br>");
+            }
         }
         for(let eleme in doc.add) {
             document.write(doc.add[eleme] + "<br>");
         }
 
 
-/* в 2 варіанті читає вкладений об'єкт, як [odject Object].
-Чи можна виключити з циклу об'єтки? */
-
+        function isObject(val) {
+            return val instanceof Object; 
+        }
 
     </script>
 </body>
