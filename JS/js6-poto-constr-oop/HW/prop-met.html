@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    function Human(name, age, hairColor) {
+        this.name = name;
+        this.age = age;
+        this.hairColor = hairColor;
+        this.__proto__ = {
+            voice : document.write("Привіт, мене звати " + name + "! Мені " + age + " роки, і я " + hairColor + "! <br>")
+        }
+        
+    }
+    
+    let den = new Human("Ден", 23, "рудий");
+    let ann = new Human("Еен", 24, "чорнява");
+    let kate = new Human("Кейт", 22, "русява");
+    let tom = new Human("Том", 33, "чорнявий");
+    let bill = new Human("Біл", 44, "блондин");
+
+
+    den.voice;
+    ann.voice;
+    kate.voice;
+    tom.voice;
+    bill.voice;
+
+    console.log(den);
+    console.log(ann);
+    console.log(kate);
+    console.log(tom);
+    console.log(bill);
+
+
+    </script>
+</body>
+</html>

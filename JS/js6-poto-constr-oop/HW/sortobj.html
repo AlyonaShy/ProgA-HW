@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Human(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        let olya = new Human("Оля", 25);
+        let vasya = new Human("Вася", 41);
+        let kolya = new Human("Коля", 13);
+        let sveta = new Human("Света", 33);
+        let anya = new Human("Аня", 21);
+
+
+        let list = [olya, vasya, kolya, sveta, anya];
+
+
+        list.sort((a, b) => a.age - b.age);
+
+        function showObj(obj) {
+            for(i = 0; i < obj.length; i++) {
+                document.write(obj[i].name + " - " + obj[i].age + "<br>");
+            }
+            document.write("<hr>");
+        }
+        showObj(list);
+
+        list.sort((a, b) => b.age - a.age);
+
+        showObj(list);
+
+
+    </script>
+</body>
+</html>
