@@ -20,7 +20,7 @@
                 } else if (type == String) {
                     type = "string"
                 } 
-                if(typeof(masiv[i]) === type) {
+                if(typeof(masiv[i]) != type) {
                     newMas.unshift(masiv[i])
                 }
             }
@@ -38,7 +38,7 @@
         const filterBy = (masiv, type) => {
             for (i = 0; i < masiv.length; i++) {
                 
-                if(typeof(masiv[i]) === type) {
+                if(typeof(masiv[i]) != type) {
                     newMas.unshift(masiv[i])
                 }
             }
