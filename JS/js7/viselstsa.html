@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let wordsMass = ["бавовна", "паралель", "будинок", "корчма", "запобіжник", "масив", "лопатка", "обрій", "лелека", "бінокль", "коцюба", "виноград"];
+
+        let word = wordsMass[Math.floor(Math.random() * wordsMass.length)];
+
+        console.log(word);
+
+
+        alert("Гра почалась. Відгадай слово!");
+
+        let goesWord = []
+
+        for (i = 0; i < word.length; i++) {
+            goesWord[i] = " _ ";
+
+        }
+
+        alert(goesWord.join("/"));
+
+        let miss = 0;
+        for (good = 0; good < word.length;) {
+
+            let goesLeter = prompt("введи букву");
+            let noGood = good;
+            for (i = 0; i < word.length; i++) {
+
+                if (word[i] == goesLeter) {
+                    if (goesWord[i] != goesLeter) {
+                        goesWord[i] = goesLeter
+                        good += 1;
+                    }
+                }
+            }
+            if (noGood == good) {
+                alert("немає такої літери")
+                miss += 1;
+            }
+            alert(goesWord.join("/"));
+        }
+
+        document.write("Ви вгадали слово - " + word + ". <br>Промахів було " + miss)
+
+        console.log(goesWord);
+
+
+    </script>
+</body>
+
+</html>

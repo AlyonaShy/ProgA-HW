@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // перший варіаннт
+        /*
+        let newMas = [];
+        const filterBy = (masiv, type) => {
+            for (i = 0; i < masiv.length; i++) {
+                if (type == Number){
+                    type = "number"
+                } else if (type == Boolean) {
+                    type = "bulean"
+                } else if (type == String) {
+                    type = "string"
+                } 
+                if(typeof(masiv[i]) === type) {
+                    newMas.unshift(masiv[i])
+                }
+            }
+            console.log("Вхідний масив - " + myMasiv);
+            console.log("Масив після обробки - " + newMas);
+
+        
+        }
+
+        let myMasiv = [23, "re4", "4444", 22, true, false];
+        filterBy(myMasiv, Number);
+        */
+        //другий варіант, але тут задавати треба не тип данних, а сторку з типом
+        let newMas = [];
+        const filterBy = (masiv, type) => {
+            for (i = 0; i < masiv.length; i++) {
+                
+                if(typeof(masiv[i]) === type) {
+                    newMas.unshift(masiv[i])
+                }
+            }
+            console.log("Вхідний масив - " + myMasiv);
+            console.log("Масив після обробки - " + newMas);
+
+        
+        }
+
+        let myMasiv = [23, "re4", "4444", 22, true, false];
+        filterBy(myMasiv, "string");
+
+
+    </script>
+</body>
+</html>

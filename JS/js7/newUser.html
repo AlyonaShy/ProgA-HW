@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class CreateNewUser {
+            constructor(firstName, lastName, bDay){
+                this.firstName = firstName = prompt("Введіть ім'я");
+                this.lastName = lastName = prompt("Введіть прізвище");
+                this.bDay = bDay = prompt("Введіть дату народження, в форматі - 00.00.0000");
+                this.yerBirth = this.bDay[6] + this.bDay[7] + this.bDay[8] + this.bDay[9];
+                this.age = new Date().getFullYear() - this.yerBirth;
+            }
+            
+            getLogin(){
+                return this.firstName[0] + this.lastName
+            }
+            pass(){
+                return this.firstName[0].toUpperCase() + this.lastName + this.yerBirth
+            }
+        
+        }
+        let newUser = new CreateNewUser;
+        
+
+        console.log("Ім'я - " + newUser.firstName);
+        console.log("Логін - " + newUser.getLogin());
+        console.log("Пароль - " + newUser.pass());
+        console.log("Вік - " + newUser.age);
+
+    </script>
+</body>
+</html>
