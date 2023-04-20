@@ -7,6 +7,11 @@ const myDiv = document.querySelector("#root");
 
 for(i = 0; i <= data.length; i++) {
     const newdiv = document.createElement("p");
+    if (data[i].saleRate != undefined) {
     newdiv.innerHTML = `Курс ${data[i].currency}  до гривні НБУ: ${data[i].saleRateNB} / ${data[i].purchaseRateNB}, ринок: ${data[i].saleRate} / ${data[i].purchaseRate}`
+    } else {
+        newdiv.innerHTML = `Курс ${data[i].currency}  до гривні НБУ: ${data[i].saleRateNB} / ${data[i].purchaseRateNB}, ринок: дані відсутні`
+    }
     myDiv.appendChild(newdiv);   
 }
+
