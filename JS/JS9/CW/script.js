@@ -3,7 +3,7 @@ let min = document.querySelector("#min"),
     mSec = document.querySelector("#msec"),
     start = document.querySelector("#start"),
     stopButton = document.querySelector("#stop"),
-    restart = document.querySelector("#restart"),
+    reset = document.querySelector("#reset"),
     counter = 0,
     intervalHandler;
 
@@ -33,10 +33,9 @@ start.onclick = () => {
 stopButton.onclick = () => {
     clearInterval(intervalHandler);
 };
-restart.onclick = () => {
+reset.onclick = () => {
     clearInterval(intervalHandler);
     min.innerHTML = 0;
     sec.innerHTML = 0;
     mSec.innerHTML = 0;
-    intervalHandler = setInterval(count, 100);
 }
