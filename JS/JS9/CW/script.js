@@ -41,15 +41,21 @@ let count = () => {
     }
 
 }
+let dis = true;
 start.onclick = () => {
+    if (dis == true) {
     intervalHandler = setInterval(count, 100);
+    dis = false;
+    }
 };
 stopButton.onclick = () => {
     clearInterval(intervalHandler);
+    dis = true;
 };
 reset.onclick = () => {
     clearInterval(intervalHandler);
     min.innerHTML = 0;
     sec.innerHTML = 0;
     mSec.innerHTML = 0;
+    dis = true;
 }
