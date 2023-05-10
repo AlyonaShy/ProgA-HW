@@ -1,0 +1,22 @@
+.img {
+    width: 600px;
+    height: 300px;
+    display: flex;
+    gap: 30px;
+    overflow: hidden;
+}
+img {
+ min-width: 570px;
+ height: auto;
+ position: relative;
+ right: 0px;
+ transition: all 2s ease-in-out;
+}
+
+.container {
+    width: 900px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

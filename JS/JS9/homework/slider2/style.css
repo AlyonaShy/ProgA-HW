@@ -1,0 +1,66 @@
+.img {
+    width: 600px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+img {
+ width: 600px;
+ height: 300px;
+ position: absolute;
+ right: 0px;
+ 
+}
+
+.container {
+    width: 900px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #999;
+}
+
+
+
+/*анімація*/
+@keyframes right {
+    0% {
+        opacity: 0;
+        transform: translateX(600px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes left {
+    0% {
+        opacity: 0;
+        transform: translateX(-600px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes rightgo {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-600px);
+    }
+}
+@keyframes leftgo {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(600px);
+    }
+}
