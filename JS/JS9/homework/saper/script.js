@@ -1,17 +1,17 @@
 document.body.style.backgroundColor = "#e4e0e0";
 
 /* вводні дані таблиці*/
-let height = 8, bombNumber = 3;
+let height = 8, bombNumber = 5;
 console.log(height);
 
 let container = document.getElementById("container");
 let table = document.createElement("table");
 
-/*функція ствооення таблиці і її визов */
+/*функція ствооення таблиці і її виклик */
 criateTable = () => {
 
 
-    console.log(table);
+    //console.log(table);
 
     container.appendChild(table);
 
@@ -25,43 +25,51 @@ criateTable = () => {
     }
 
 }
-
+/* викликаєм ф-ю створення табл */
 criateTable();
 
-/*    */
-let myBomb = `<img src="./img/bomb.png" alt="mine">`;
-let myFlag = `<img src="./img/flag.png" alt="flag">`;
-let checker = false;
-let num;
-let empty;
+/*  задаєм змінні   */
+let myBomb = `<img src="./img/bomb.png" alt="mine">`; // зобр. бомби
+let myFlag = `<img src="./img/flag.png" alt="flag">`; //зобр. прапорця
+let checker = false; // мітка для перевірки чи був клік по клітинці
+let num; // для задавання допоміжних цифр на клітинці, що торкається бомби
+let empty; // мітка для клітинок які порожні
+let open; 
 
 
-/* */
+/* здаем змінну для отримання строки в якій дочерні елементи будуть клітинки */
 
 let row = document.getElementsByTagName("tr");
 
-//console.log(row[2].children[3]);
 
-
+/* рандомно задаем міну для клитинки, далі для кожної роставляєм по діаметру допоміжні цифри */
 for (i = 0; i < bombNumber; i++) {
     let a = Math.floor(Math.random() * row.length);
     let b = Math.floor(Math.random() * row.length);
 
-    row[a].children[b].bomb = true;
-    console.log(row[a].children[b]);
+    if (row[a].children[b].bomb == true) {
+        console.log(i);
+        i = i - 1; //якщо клітинка вже з міною вертаю ітерацію на повтор
+        continue;
+    } else {
+        row[a].children[b].bomb = true;
+        row[a].children[b].num = false; // удаляю допоміжні цифри, якщо міна припадає на клітинку з цифрою
+        console.log(row[a].children[b]);
+    }
 
-
-    /*funcsion */
+    /*функція для підрахунку допоміжної цифри навколо міни */
     let check = (x, y) => {
-        if (row[x].children[y].num > 0) {
-            row[x].children[y].num++;
-        } else {
-            row[x].children[y].num = 1;
-        }
+        if (!row[x].children[y].bomb) {
+            if (row[x].children[y].num > 0) {
+                row[x].children[y].num++;
+            } else {
+                row[x].children[y].num = 1;
+            }
+        } 
     }
 
 
-
+/* вибираю всі клітинки навколо міни, в залежності від її розташування в сітці таблиці, для кожної запускається функція прорахунку допоміжної цифри */
     if (a != 0 & a != row.length & b != 0 & b != row.length) {
         check(a + 1, b);
         check(a - 1, b);
@@ -113,82 +121,27 @@ for (i = 0; i < bombNumber; i++) {
         check(a, b - 1);
     }
 
-
-
-    /* 
-
-    if (a != 0 & a != row.length & b != 0 & b != row.length) {
-        row[a + 1].children[b].num = 1;
-        row[a - 1].children[b].num = 1;
-        row[a + 1].children[b + 1].num = 1;
-        row[a + 1].children[b - 1].num = 1;
-        row[a - 1].children[b + 1].num = 1;
-        row[a - 1].children[b - 1].num = 1;
-        row[a].children[b + 1].num = 1;
-        row[a].children[b - 1].num = 1;
-    } else if (a = 0 & b != 0 & b != row.length) {
-        row[a + 1].children[b].num = 1;
-        row[a + 1].children[b + 1].num = 1;
-        row[a + 1].children[b - 1].num = 1;
-        row[a].children[b + 1].num = 1;
-        row[a].children[b - 1].num = 1;
-    } else if (a = row.length & b != 0 & b != row.length) {
-        row[a - 1].children[b].num = 1;
-        row[a - 1].children[b + 1].num = 1;
-        row[a - 1].children[b - 1].num = 1;
-        row[a].children[b + 1].num = 1;
-        row[a].children[b - 1].num = 1;
-    } else if (b = 0 & a != 0 & a != row.length) {
-        row[a + 1].children[b].num = 1;
-        row[a - 1].children[b].num = 1;
-        row[a + 1].children[b + 1].num = 1;
-        row[a - 1].children[b + 1].num = 1;
-        row[a].children[b + 1].num = 1;
-    } else if (b = row.length & a != 0 & a != row.length) {
-        row[a + 1].children[b].num = 1;
-        row[a - 1].children[b].num = 1;
-        row[a + 1].children[b - 1].num = 1;
-        row[a - 1].children[b - 1].num = 1;
-        row[a].children[b - 1].num = 1;
-    } else if (a == 0 & b == 0) {
-        row[a + 1].children[b].num = 1;
-        row[a + 1].children[b + 1].num = 1;
-        row[a].children[b + 1].num = 1;
-    } else if (a == 0 & b == row.length) {
-        row[a + 1].children[b].num = 1;
-        row[a + 1].children[b - 1].num = 1;
-        row[a].children[b - 1].num = 1;
-    } else if (a == row.length & b == 0) {
-        row[a - 1].children[b].num = 1;
-        row[a - 1].children[b + 1].num = 1;
-        row[a].children[b + 1].num = 1;
-    } else if (a == row.length & b == row.length) {
-        row[a - 1].children[b].num = 1;
-        row[a - 1].children[b - 1].num = 1;
-        row[a].children[b - 1].num = 1;
-    }
-    */
 }
 
-
+/* зазначаю всі незадіяні клитинки позначкою порожньої клітинки */
 for (i = 0; i < height; i++) {
     for (j = 0; j < height; j++) {
         if (!row[i].children[j].bomb & !row[i].children[j].num) {
             row[i].children[j].empty = true;
         }
     }
+
 }
 
 
 
-
-
+/* перебор клитинок, щоб повісити на кожну "событие" */
 for (i = 0; i < height; i++) {
     for (j = 0; j < height; j++) {
-        
-        row[i].children[j].addEventListener("mouseenter",
+
+        row[i].children[j].addEventListener("mouseenter", //для руху курсора по клітинках
             function mouseUp() {
-                if (this.checker) {
+                if (this.checker || this.open) {
                     console.log("clicnut");
 
                 } else {
@@ -197,20 +150,17 @@ for (i = 0; i < height; i++) {
 
             },
             false);
-        row[i].children[j].addEventListener("mouseleave",
+        row[i].children[j].addEventListener("mouseleave",// для виходу з клітинки
             function mousdown() {
-                if (this.checker == true) {
-                    console.log("clicnut");
-                } else if (this.style.backgroundColor == "#991") {
-                    this.style.backgroundColor = "#991";
-                } else {
-                    this.style.backgroundColor = "#999";
+                if (!this.checker & !this.open) {
+                    this.style.backgroundColor = "#a5a2a2";
                 }
+                
             },
             false);
 
 
-        row[i].children[j].addEventListener("click",
+        row[i].children[j].addEventListener("click", // для кліку
             function () {
                 this.checker = true;
                 if (this.bomb) {
@@ -221,10 +171,8 @@ for (i = 0; i < height; i++) {
 
                 } else if (this.empty) {
                     this.style.backgroundColor = "#995";
-                    console.log("clock" + i);
+                    console.log("clock" + this);
                     emptyCheck(i, j);
-                    //
-                    // this.removeEventListener(mousdown());
                 }
             },
             false);
@@ -237,172 +185,21 @@ for (i = 0; i < height; i++) {
 
 
 
+/* ф-я має відкривати всі пусті клітинки навколо тої що був клік. Але моя відкриває всі порожні, я не можу прив'язатись до клітинки по якій був клік бо перебором перебираються всі клітинки до останньої */
 
-
-
-let emptyCheck =(q, w) => {
-    for(k = 0; k < height; k++) {
-        for (p = 0; p < height; p++) {
-            console.log(row[k].children[p]);
-            if (row[k].children[p].empty == true) {
-                row[k].children[p].style.backgroundColor = "#991";
-            } else if (row[k].children[p].num == true) {
-                row[k].children[p].innerHTML = row[k].children[p].num;
+    let emptyCheck = (q, w) => {
+        for (k = 0; k < height; k++) {
+            for (p = 0; p < height; p++) {
+                //console.log(row[k].children[p]);
+                if (row[k].children[p].empty == true) {
+                    row[k].children[p].style.backgroundColor = "#991";
+                    row[k].children[p].open = true
+                } else if (row[k].children[p].num == true) {
+                    row[k].children[p].innerHTML = row[k].children[p].num;
+                }
             }
-        }
-    };
-}
-
-
-
-
-/*
-const td = document.getElementsByTagName("td");
-
-//console.log(td);
-
-//let bomb = document.getElementById("bomb");
-//console.log(bomb);
-//td.mouseenter
-let myBomb = `<img src="./img/bomb.png" alt="mine">`;
-let myFlag = `<img src="./img/flag.png" alt="flag">`;
-
-let checker = false;
-let massBomb = [];
-let num;
-let empty;
-
-/*
-td[1].bomb = true;
-td[5].bomb = true;
-td[0].num = 1;
-td[2].num = 1;
-td[12].num = 1;
-td[9].empty = true;
-
-
-for (i = 0; i < 3; i++) {
-    massBomb[i] = Math.floor(Math.random() * td.length);
-    td[massBomb[i]].bomb = true;
-}
-console.log(massBomb);
-
-
-for (i = 0; i < td.length; i++) {
-    if (td[i].bomb) {
-        td[i + 1].num = 1;
-        td[i - 1].num = 1;
-        td[i + 10].num = 1;
-        td[i + 9].num = 1;
-        td[i + 11].num = 1;
-        td[i - 10].num = 1;
-        td[i - 9].num = 1;
-        td[i - 11].num = 1;
+        };
     }
-}
-for (i = 0; i < td.length; i++) {
-    if (td[i].bomb || td[i].num) {
-        console.log("ffff");
-    } else {
-        td[i].empty = true;
-    }
-}
-
-
-//console.log(td[1].bomb);
-
-for (i = 0; i <= td.length; i++) {
-    //console.log(td[1].bomb);
-
-    td[i].addEventListener("mouseenter",
-        function mouseUp() {
-            if (this.checker) {
-                console.log("clicnut");
-
-            } else {
-                this.style.backgroundColor = "yellow";
-            }
-
-        },
-        false);
-    td[i].addEventListener("mouseleave",
-        function mousdown() {
-            if (this.checker == true) {
-                console.log("clicnut");
-            } else {
-                this.style.backgroundColor = "#999";
-            }
-        },
-        false);
-
-
-    td[i].addEventListener("click",
-        function () {
-            this.checker = true;
-            if (this.bomb) {
-                this.innerHTML = myBomb;
-                //alert("Гра закінчена, Ви програли");
-            } else if (this.num) {
-                this.innerHTML = this.num;
-
-            } else if (this.empty) {
-                this.style.backgroundColor = "#991";
-                // this.removeEventListener(mousdown());
-            }
-        },
-        false);
-
-}
-*/
 
 
 
-
-
-
-
-
-
-//td.forEach(o => console.log(o));
-
-/*td.forEach(function(item, i, arr) {
-    console.log(i + ": " + item + " (массив:" + arr + ")")
-    //alert( i + ": " + item + " (массив:" + arr + ")" );
-  });
-  
-  
-  
-  td[i].addEventListener("click",
-        function () {
-            if(bomb) {
-                this.style.backgroundColor = "red";
-            } else {
-                this.style.backgroundColor = "green";
-            }
-            
-        },
-        false);
-  
-  
-
-
-        щось...
-  let cell = document.getElementsByTagName("td");
-cell.addEventListener("click",
-function () {
-    if (this.bomb) {
-        this.innerHTML = myBomb;
-        //alert("Гра закінчена, Ви програли");
-    } else if (this.num) {
-        this.innerHTML = this.num;
-
-    } else if (this.empty) {
-        this.style.backgroundColor = "#995";
-        console.log("clock" + this);
-        //emptyCheck(i, j);
-        //
-        // this.removeEventListener(mousdown());
-    }
-},
-false)
-  */
