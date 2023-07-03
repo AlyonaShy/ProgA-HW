@@ -1,0 +1,23 @@
+
+html {
+    width: 100%;
+}
+body {
+    margin: 25px auto;
+    width: 800px;
+}
+h1 {
+    text-align: center;
+}
+
+input {
+    width: 70px;
+}
+button {
+    height: 40px;
+    font-size: 24px;
+}
+img {
+    width: 30px;
+    height: auto;
+}

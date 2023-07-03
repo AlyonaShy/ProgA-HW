@@ -59,7 +59,7 @@ for (i = 0; i < bombNumber; i++) {
 
     /*функція для підрахунку допоміжної цифри навколо міни */
     let check = (x, y) => {
-        if (!row[x].children[y].bomb) {
+        if (row[x].children[y].bomb != true) {
             if (row[x].children[y].num > 0) {
                 row[x].children[y].num++;
             } else {
@@ -70,7 +70,7 @@ for (i = 0; i < bombNumber; i++) {
 
 
 /* вибираю всі клітинки навколо міни, в залежності від її розташування в сітці таблиці, для кожної запускається функція прорахунку допоміжної цифри */
-    if (a != 0 & a != row.length & b != 0 & b != row.length) {
+    if (a != 0 && a != row.length && b != 0 && b != row.length) {
         check(a + 1, b);
         check(a - 1, b);
         check(a + 1, b + 1);
@@ -79,43 +79,43 @@ for (i = 0; i < bombNumber; i++) {
         check(a - 1, b - 1);
         check(a, b + 1);
         check(a, b - 1);
-    } else if (a == 0 & b != 0 & b != row.length) {
+    } else if (a == 0 && b != 0 && b != row.length) {
         check(a + 1, b);
         check(a + 1, b + 1);
         check(a + 1, b - 1);
         check(a, b + 1);
         check(a, b - 1);
-    } else if (a == row.length & b != 0 & b != row.length) {
+    } else if (a == row.length && b != 0 && b != row.length) {
         check(a - 1, b);
         check(a - 1, b + 1);
         check(a - 1, b - 1);
         check(a, b + 1);
         check(a, b - 1);
-    } else if (b == 0 & a != 0 & a != row.length) {
+    } else if (b == 0 && a != 0 && a != row.length) {
         check(a + 1, b);
         check(a - 1, b);
         check(a + 1, b + 1);
         check(a - 1, b + 1);
         check(a, b + 1);
-    } else if (b == row.length & a != 0 & a != row.length) {
+    } else if (b == row.length && a != 0 && a != row.length) {
         check(a + 1, b);
         check(a - 1, b);
         check(a + 1, b - 1);
         check(a - 1, b - 1);
         check(a, b - 1);
-    } else if (a == 0 & b == 0) {
+    } else if (a == 0 && b == 0) {
         check(a + 1, b);
         check(a + 1, b + 1);
         check(a, b + 1);
-    } else if (a == 0 & b == row.length) {
+    } else if (a == 0 && b == row.length) {
         check(a + 1, b);
         check(a + 1, b - 1);
         check(a, b - 1);
-    } else if (a == row.length & b == 0) {
+    } else if (a == row.length && b == 0) {
         check(a - 1, b);
         check(a - 1, b + 1);
         check(a, b + 1);
-    } else if (a == row.length & b == row.length) {
+    } else if (a == row.length && b == row.length) {
         check(a - 1, b);
         check(a - 1, b - 1);
         check(a, b - 1);
