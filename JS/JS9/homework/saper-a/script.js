@@ -4,7 +4,9 @@ dataform.elements[3].addEventListener("click", () => {
     const heightField = dataform.elements[0].value;
     const widthField = dataform.elements[1].value;
     const numOfBomb = dataform.elements[2].value;
-
+    if(heightField <= 0 || widthField <= 0 || numOfBomb <= 0) {
+        alert("Введіть корректні значення!");
+    }
     document.querySelector(".field").style = (`margin: 20px auto; display: grid; grid-template-columns: repeat(${widthField}, 40px);`);
 
     startGame(widthField, heightField, numOfBomb);
@@ -98,6 +100,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_COUNT) {
 
         cell.disabled = true;
         contDis +=1;
+        console.log(contDis);
         if(contDis === WIDTH * HEIGHT - BOMBS_COUNT) {
             alert('ти виграв!');
 
@@ -105,6 +108,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_COUNT) {
         if (isBomb(row, collumn)) {
             cell.innerHTML = mineimg;
             alert('ти програв!');
+            location.reload();
             return;
 
         }
