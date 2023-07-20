@@ -1,6 +1,28 @@
 let myBtnOll = document.querySelector("#oll");
 let myBtnSort = document.querySelector("#sort");
 
+function createFiels(data) {
+    let body = document.querySelector(".body");
+    for (j = 0; j < data.length; j++) {
+
+        let contBody = document.createElement("div");
+        contBody.className = "body__row";
+        body.append(contBody);
+        for (i = 0; i < 3; i++) {
+            let contColl = document.createElement("div");
+            contColl.className = "body__coll"
+            contBody.append(contColl);
+            if (i == 0) {
+                contColl.innerHTML = `${data[j].txt}`
+            } else if (i == 1) {
+                contColl.innerHTML = `${data[j].cc}`
+            } else if (i == 2) {
+                contColl.innerHTML = `${data[j].rate}`
+            }
+        }
+
+    }
+}
 
 myBtnSort.addEventListener("click", () => {
     myBtnSort.style.display = "none";
@@ -18,7 +40,7 @@ myBtnSort.addEventListener("click", () => {
 
 
             for (var i = 0; i < data.length; i++) {
-                if(data[i].rate < 25) {
+                if (data[i].rate < 25) {
                     data.splice(i, 1);
                     i = i - 1;
                 }
@@ -36,29 +58,7 @@ myBtnSort.addEventListener("click", () => {
                 }
             }
 
-
-            let body = document.querySelector(".body");
-            for (j = 0; j < data.length; j++) {
-
-                let contBody = document.createElement("div");
-                contBody.className = "body__row";
-                body.append(contBody);
-                for (i = 0; i < 3; i++) {
-                    let contColl = document.createElement("div");
-                    contColl.className = "body__coll"
-                    contBody.append(contColl);
-                    if (i == 0) {
-                        contColl.innerHTML = `${data[j].txt}`
-                    } else if (i == 1) {
-                        contColl.innerHTML = `${data[j].cc}`
-                    } else if (i == 2) {
-                        contColl.innerHTML = `${data[j].rate}`
-                    }
-                }
-
-            }
-
-
+            createFiels(data);
         }
     }
 
@@ -84,28 +84,7 @@ myBtnOll.addEventListener("click", () => {
             let data = JSON.parse(xhr.responseText);
             localStorage.data = JSON.stringify(data);
 
-
-            let body = document.querySelector(".body");
-            for (j = 0; j < data.length; j++) {
-
-                let contBody = document.createElement("div");
-                contBody.className = "body__row";
-                body.append(contBody);
-                for (i = 0; i < 3; i++) {
-                    let contColl = document.createElement("div");
-                    contColl.className = "body__coll"
-                    contBody.append(contColl);
-                    if (i == 0) {
-                        contColl.innerHTML = `${data[j].txt}`
-                    } else if (i == 1) {
-                        contColl.innerHTML = `${data[j].cc}`
-                    } else if (i == 2) {
-                        contColl.innerHTML = `${data[j].rate}`
-                    }
-                }
-
-            }
-
+            createFiels(data);
         }
     }
     xhr.send();
