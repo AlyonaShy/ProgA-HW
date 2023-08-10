@@ -66,9 +66,7 @@ main {
 }
 
 #banner {
-    position: fixed;
-    bottom: 2%;
-    right: 1%;
+    position: absolute;
     background: linear-gradient(50deg, white, #eee);
     box-shadow: 2px 2px 5px #999;
     padding: 1em 1.5em;
@@ -390,4 +388,21 @@ footer > form > div > p {
         padding: 30px 0 0;
         text-align: center;
     }
+}
+/*--------------*/
+
+.sauces, .topings {
+    display: flex;
+    flex-direction: column;
+}
+
+.errorinput {
+    color: red;
+    font-size: 0.6em;
+}
+
+.delite {
+    background-color: #d60000;
+    margin-left: 15px;
+   width: 1.3em;
 }
