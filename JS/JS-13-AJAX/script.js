@@ -36,6 +36,7 @@ myBtnSort.addEventListener("click", () => {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let data = JSON.parse(xhr.responseText);
+            console.log(data);
             localStorage.data = JSON.stringify(data);
 
 
